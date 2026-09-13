@@ -1,63 +1,110 @@
-# Instacook, a meal recommendation app
+# Instacook - A Meal Recommendation App
 
-**[Try it live →](https://instacook-app.netlify.app/)**
+**[Live Demo →](https://instacook-app.netlify.app/)**
+
+A full-stack meal recommendation platform where users can discover, create, and save recipes. Features include user feeds, recipe books, social interactions (follow, like, comment), and tag-based search.
 
 ![Screenshot 1](assets/cook1.png)
-
 ![Screenshot 2](assets/cook2.png)
-
 ![Screenshot 3](assets/cook3.png)
+![Screenshot 4](assets/cook4.png)
+![Screenshot 5](assets/cook5.png)
 
-![Screenshot 3](assets/cook4.png)
+## Developers
 
-![Screenshot 3](assets/cook5.png)
-
-# Developers
-## Frontend Developers
+### Frontend
 - Matthew Lau
 - Steven Nguyen
 - Raymond Chung
 
-## Backend Developers
+### Backend
 - Joe Nguyen
 - Yuancong Cheng (Ryan)
 
-# Tech Stack
-## Frontend
-- React.js
-- TypeScript
-- Material UI
+## Tech Stack
 
-## Backend
-- GraphQL
-- Express.js
-- Node.js
-- MongoDB
+| Layer | Technology |
+|-------|-----------|
+| Frontend | React.js, TypeScript, Material UI |
+| Backend | GraphQL, Express.js, Node.js |
+| Database | MongoDB Atlas (free M0 tier) |
+| Frontend Hosting | Netlify |
+| Backend Hosting | Render |
 
-# Prerequisites
-- Node.js must be already installed.
-- If not already installed, please visit https://github.com/nvm-sh/nvm for instructions
+## Features
 
-# Setup and Configuration
-## Environment Setup Instructions (Ubuntu)
-1. Download the project via `git clone` or by downloading the files as a .zip.
-2. Open the backend folder in your terminal via `cd capstone-project-3900-f18b-poggers/backend`
-3. Enter `npm install` to install backend dependencies
-4. Run `npm start` to run the backend on port 6921.
-5. Repeat steps 2-4 for the frontend folder (`capstone-project-3900-f18b-poggers/frontend`) to run the frontend.
-6. After this, the application should have successfully opened in a browser window.
+- **Recipe Discovery** - Browse recipes by category (meals, meat, drinks, desserts, cuisines, ingredients, cooking methods)
+- **Search & Filter** - Full-text search with tag-based filtering
+- **User Profiles** - View profiles, follow/unfollow users
+- **Recipe Books** - Save recipes into custom collections
+- **Social Interactions** - Like recipes, leave comments
+- **News Feed** - See recipes from users you follow
 
-## Database Credential Configuration
-- If you are planning to set up the project in your local development environment, you will need to change the database credentials located in `backend/nodemon.json`.
-- To generate these credentials, we will need to create a MongoDB database:
-1. Create and login to your MongoDB account at https://account.mongodb.com/account/login.
-2. Click on the “Build a Database” button after signing in to create a new MongoDB database.
-3. Select your desired database configuration and click “Create Cluster”.
-4. Create a new user for your new database.
-5. Select your desired connection settings.
-6. After your new database has been created, click on the “Connect” button.
-7. Select the “Connect your application” option.
-8. Take note of the username, password and database name and replace the values in `nodemon.json` with these values, replacing `<password>` with your user’s password.
+## Prerequisites
 
-# Side Notes
-- The application might become a bit slow/unresponsive if many recipes are uploaded with a free MongoDB database (i.e. Shared Cluster).
+- [Node.js](https://github.com/nvm-sh/nvm) (v14 or higher)
+- A MongoDB Atlas account (free tier)
+
+## Local Setup
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Swxer/Instacook.git
+cd Instacook
+```
+
+### 2. Set up MongoDB Atlas
+
+1. Create an account at [mongodb.com/atlas](https://www.mongodb.com/atlas)
+2. Build a database → select the **M0 Free** tier
+3. Create a database user under **Security → Database Access**
+4. Allow network access under **Security → Network Access** (add `0.0.0.0/0`)
+5. Click **Connect** → **Connect your application** and copy the connection string
+
+### 3. Configure the backend
+
+```bash
+cd backend
+npm install
+```
+
+Create a `.env` file in the `backend/` directory:
+
+```
+MONGO_USER=your_db_username
+MONGO_PASSWORD=your_db_password
+MONGO_DB=comp3900
+JWT_SECRET=your_secret_key
+FRONTEND_URL=http://localhost:3000
+NODE_ENV=development
+```
+
+Start the backend:
+
+```bash
+npm start
+```
+
+### 4. Configure the frontend
+
+```bash
+cd ../frontend
+npm install
+npm start
+```
+
+The frontend will open at `http://localhost:3000` and connect to the backend automatically.
+
+## Deployment
+
+- **Frontend** - Deployed on [Netlify](https://www.netlify.com/). Build config is in `netlify.toml`.
+- **Backend** - Deployed on [Render](https://render.com/) as a Web Service.
+- **Database** - Hosted on [MongoDB Atlas](https://www.mongodb.com/atlas) (M0 free tier, 512 MB storage).
+
+Environment variables for production are configured in each platform's dashboard. Never commit `.env` files or secrets to version control.
+
+## Side Notes
+
+- The application may be slow on first load - Render free tier spins down after inactivity and takes ~30-60s to wake up
+- The free MongoDB tier has 512 MB storage. Large recipe images (stored as base64) will consume this quickly
