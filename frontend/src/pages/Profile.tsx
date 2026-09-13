@@ -88,7 +88,7 @@ const Profile = (props: Props) => {
           `
         };
 
-        const res = await fetch('API_URL', {
+        const res = await fetch(API_URL, {
           body: JSON.stringify(requestBody),
           method: "POST",
           headers: {
@@ -126,7 +126,7 @@ const Profile = (props: Props) => {
           `
         };
 
-        const res = await fetch('API_URL', {
+        const res = await fetch(API_URL, {
           body: JSON.stringify(requestBody),
           method: "POST",
           headers: {
@@ -190,7 +190,7 @@ const Profile = (props: Props) => {
         `
       };
 
-      const res = await fetch('API_URL', {
+      const res = await fetch(API_URL, {
         body: JSON.stringify(requestBody),
         method: "POST",
         headers: {

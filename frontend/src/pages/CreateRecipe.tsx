@@ -67,7 +67,7 @@ const CreateRecipe = (props: Props) => {
       `
     }
 
-    const res = await fetch('API_URL', {
+    const res = await fetch(API_URL, {
       body: JSON.stringify(body),
       method: "POST",
       headers: {
@@ -114,7 +114,7 @@ const CreateRecipe = (props: Props) => {
       `
     }
     try {
-      const res = await fetch('API_URL', {
+      const res = await fetch(API_URL, {
         body: JSON.stringify(requestBody),
         method: "POST",
         headers: {
@@ -163,7 +163,7 @@ const CreateRecipe = (props: Props) => {
       `
     }
     try {
-      const res = await fetch('API_URL', {
+      const res = await fetch(API_URL, {
         body: JSON.stringify(requestBody),
         method: "POST",
         headers: {
