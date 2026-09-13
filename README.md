@@ -2,6 +2,16 @@
 
 **[Try it live →](https://instacook-app.netlify.app/)**
 
+![Screenshot 1](assets/cook1.png)
+
+![Screenshot 2](assets/cook2.png)
+
+![Screenshot 3](assets/cook3.png)
+
+![Screenshot 3](assets/cook4.png)
+
+![Screenshot 3](assets/cook5.png)
+
 # Developers
 ## Frontend Developers
 - Matthew Lau
