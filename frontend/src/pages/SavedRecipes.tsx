@@ -6,6 +6,7 @@ import { currentAuthenticatedUser } from '../util/currentAuthenticatedUser';
 import AddIcon from '@mui/icons-material/Add';
 import RecipeBook from '../components/recipebook/RecipeBook';
 import RecipeFolder from '../components/recipebook/RecipeFolder';
+import { API_URL } from '../config';
 
 type Props = {}
 
@@ -55,7 +56,7 @@ const SavedRecipes = (props: Props) => {
           }
         `
       };
-      const res = await fetch('http://localhost:6921/graphql', {
+      const res = await fetch(API_URL, {
         body: JSON.stringify(requestBody),
         method: "POST",
         headers: {
@@ -103,7 +104,7 @@ const SavedRecipes = (props: Props) => {
           }
         `
       };
-      const res = await fetch('http://localhost:6921/graphql', {
+      const res = await fetch(API_URL, {
         body: JSON.stringify(requestBody),
         method: "POST",
         headers: {
@@ -146,7 +147,7 @@ const SavedRecipes = (props: Props) => {
           }
         `
       };
-      const res = await fetch('http://localhost:6921/graphql', {
+      const res = await fetch(API_URL, {
         body: JSON.stringify(requestBody),
         method: "POST",
         headers: {
@@ -182,7 +183,7 @@ const SavedRecipes = (props: Props) => {
           }
         `
       };
-      const res = await fetch('http://localhost:6921/graphql', {
+      const res = await fetch(API_URL, {
         body: JSON.stringify(requestBody),
         method: "POST",
         headers: {
@@ -221,7 +222,7 @@ const SavedRecipes = (props: Props) => {
           }
         `
       };
-      const res = await fetch('http://localhost:6921/graphql', {
+      const res = await fetch(API_URL, {
         body: JSON.stringify(requestBody),
         method: "POST",
         headers: {

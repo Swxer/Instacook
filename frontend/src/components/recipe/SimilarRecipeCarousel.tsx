@@ -5,6 +5,7 @@ import RecipeCard from '../RecipeCard'
 import Slider from "react-slick";
 import DiscoveryCardLoader from '../RecipeCardPlaceholder'
 import { RecipeThumbnail } from '../../types/instacook-types';
+import { API_URL } from '../../config';
 
 type Props = {
   // title of the carousel
@@ -100,7 +101,7 @@ const SimilarRecipeCarousel = (props: Props) => {
           `
         }
 
-        const res = await fetch('http://localhost:6921/graphql', {
+        const res = await fetch(API_URL, {
           body: JSON.stringify(body),
           method: "POST",
           headers: {

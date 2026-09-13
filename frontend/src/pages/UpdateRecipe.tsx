@@ -6,6 +6,7 @@ import { Tag, TagObj } from '../types/instacook-types';
 import RecipeContents from '../components/recipe/RecipeContents';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Recipe } from '../types/instacook-types';
+import { API_URL } from '../config';
 
 type Props = {}
 
@@ -60,7 +61,7 @@ const UpdateRecipe = (props: Props) => {
           `
         }
 
-        const res = await fetch('http://localhost:6921/graphql', {
+        const res = await fetch(API_URL, {
           body: JSON.stringify(requestBody),
           method: "POST",
           headers: {
@@ -121,7 +122,7 @@ const UpdateRecipe = (props: Props) => {
       `
     }
 
-    const res = await fetch('http://localhost:6921/graphql', {
+    const res = await fetch(API_URL, {
       body: JSON.stringify(body),
       method: "POST",
       headers: {
@@ -168,7 +169,7 @@ const UpdateRecipe = (props: Props) => {
       `
     }
     try {
-      const res = await fetch('http://localhost:6921/graphql', {
+      const res = await fetch(API_URL, {
         body: JSON.stringify(requestBody),
         method: "POST",
         headers: {
@@ -212,7 +213,7 @@ const UpdateRecipe = (props: Props) => {
       }
 
       try {
-        const res = await fetch('http://localhost:6921/graphql', {
+        const res = await fetch(API_URL, {
           body: JSON.stringify(requestBody),
           method: "POST",
           headers: {

@@ -1,6 +1,7 @@
 import React from 'react'
 import RecipeCarousel from '../components/discovery/RecipeCarousel'
 import { Tag, TagObj } from '../types/instacook-types'
+import { API_URL } from '../config'
 
 type Props = {}
 
@@ -23,7 +24,7 @@ const Discovery = (props: Props) => {
         `
       }
 
-      const res = await fetch('http://localhost:6921/graphql', {
+      const res = await fetch(API_URL, {
         body: JSON.stringify(body),
         method: "POST",
         headers: {

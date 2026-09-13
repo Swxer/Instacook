@@ -6,6 +6,7 @@ import RecipeCard from '../components/RecipeCard';
 import FilterSearchBox from '../components/search/FilterSearchBox';
 import SortButton from '../components/search/SortButton';
 import { RecipeThumbnail, Tag, TagObj } from '../types/instacook-types';
+import { API_URL } from '../config';
 
 type Props = {}
 
@@ -44,7 +45,7 @@ const Search = (_props: Props) => {
           }
         `
       }
-      const res = await fetch('http://localhost:6921/graphql', {
+      const res = await fetch(API_URL, {
         body: JSON.stringify(body),
         method: "POST",
         headers: {
@@ -82,7 +83,7 @@ const Search = (_props: Props) => {
       }
 
 
-      const res = await fetch('http://localhost:6921/graphql', {
+      const res = await fetch(API_URL, {
         body: JSON.stringify(body),
         method: "POST",
         headers: {
@@ -130,7 +131,7 @@ const Search = (_props: Props) => {
         `
       }
 
-      const res = await fetch('http://localhost:6921/graphql', {
+      const res = await fetch(API_URL, {
         body: JSON.stringify(body),
         method: "POST",
         headers: {

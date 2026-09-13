@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import SidebarSubheading from './SidebarSubheading';
 import SidebarButtonItem from './SidebarButtonItem';
 import { Tag, TagObj } from '../../types/instacook-types';
+import { API_URL } from '../../config';
 
 type Props = {
   // boolean that determines if user is logged in or not
@@ -31,7 +32,7 @@ const Sidebar = (props: Props) => {
         `
       }
 
-      const res = await fetch('http://localhost:6921/graphql', {
+      const res = await fetch(API_URL, {
         body: JSON.stringify(body),
         method: "POST",
         headers: {

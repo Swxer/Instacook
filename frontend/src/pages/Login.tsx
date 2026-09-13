@@ -3,6 +3,7 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import authbackground from '../static/images/authbackground.jpeg'
 import { currentAuthenticatedUser } from '../util/currentAuthenticatedUser';
+import { API_URL } from '../config';
 
 type Props = {}
 
@@ -45,7 +46,7 @@ const Login = (props: Props) => {
         `
       }
 
-      const res = await fetch('http://localhost:6921/graphql', {
+      const res = await fetch(API_URL, {
         body: JSON.stringify(body),
         method: "POST",
         headers: {

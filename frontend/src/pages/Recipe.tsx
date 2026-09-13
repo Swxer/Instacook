@@ -12,6 +12,7 @@ import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
 import CheckItem from '../components/recipe/CheckItem';
 import { red } from '@mui/material/colors';
 import SimilarRecipeCarousel from '../components/recipe/SimilarRecipeCarousel'
+import { API_URL } from '../config';
 type Props = {}
 
 const tagStyles = {
@@ -92,7 +93,7 @@ const Recipe = (props: Props) => {
           `
         }
 
-        const res = await fetch('http://localhost:6921/graphql', {
+        const res = await fetch('API_URL', {
           body: JSON.stringify(requestBody),
           method: "POST",
           headers: {
@@ -132,7 +133,7 @@ const Recipe = (props: Props) => {
       }
 
       try {
-        const res2 = await fetch('http://localhost:6921/graphql', {
+        const res2 = await fetch('API_URL', {
           body: JSON.stringify(requestBody2),
           method: "POST",
           headers: {
@@ -170,7 +171,7 @@ const Recipe = (props: Props) => {
             }
           `
         };
-        const res = await fetch('http://localhost:6921/graphql', {
+        const res = await fetch('API_URL', {
           body: JSON.stringify(requestBody),
           method: "POST",
           headers: {
@@ -266,7 +267,7 @@ const Recipe = (props: Props) => {
       `
     }
     try {
-      const res = await fetch('http://localhost:6921/graphql', {
+      const res = await fetch('API_URL', {
         body: JSON.stringify(requestBody),
         method: "POST",
         headers: {
@@ -305,7 +306,7 @@ const Recipe = (props: Props) => {
       `
     }
     try {
-      const res = await fetch('http://localhost:6921/graphql', {
+      const res = await fetch('API_URL', {
         body: JSON.stringify(requestBody),
         method: "POST",
         headers: {

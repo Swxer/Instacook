@@ -6,6 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { currentAuthenticatedUser } from '../util/currentAuthenticatedUser';
 import GroupsIcon from '@mui/icons-material/Groups';
 import { red } from '@mui/material/colors';
+import { API_URL } from '../config';
 
 type Props = {}
 
@@ -40,7 +41,7 @@ const Profile = (props: Props) => {
             }
           `
         };
-        const res = await fetch('http://localhost:6921/graphql', {
+        const res = await fetch(API_URL, {
           body: JSON.stringify(requestBody),
           method: "POST",
           headers: {
@@ -87,7 +88,7 @@ const Profile = (props: Props) => {
           `
         };
 
-        const res = await fetch('http://localhost:6921/graphql', {
+        const res = await fetch('API_URL', {
           body: JSON.stringify(requestBody),
           method: "POST",
           headers: {
@@ -125,7 +126,7 @@ const Profile = (props: Props) => {
           `
         };
 
-        const res = await fetch('http://localhost:6921/graphql', {
+        const res = await fetch('API_URL', {
           body: JSON.stringify(requestBody),
           method: "POST",
           headers: {
@@ -189,7 +190,7 @@ const Profile = (props: Props) => {
         `
       };
 
-      const res = await fetch('http://localhost:6921/graphql', {
+      const res = await fetch('API_URL', {
         body: JSON.stringify(requestBody),
         method: "POST",
         headers: {

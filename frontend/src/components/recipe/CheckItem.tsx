@@ -1,5 +1,6 @@
 import { Checkbox, FormControlLabel } from '@mui/material';
 import { useState, useEffect } from 'react';
+import { API_URL } from '../../config';
 
 type Props = {
   // id of the recipe book
@@ -28,7 +29,7 @@ const CheckItem = (props: Props) => {
             }
           `
         };
-        const res = await fetch('http://localhost:6921/graphql', {
+        const res = await fetch(API_URL, {
           body: JSON.stringify(requestBody),
           method: "POST",
           headers: {
@@ -63,7 +64,7 @@ const CheckItem = (props: Props) => {
         `
       };
 
-      const res = await fetch('http://localhost:6921/graphql', {
+      const res = await fetch(API_URL, {
         body: JSON.stringify(requestBody),
         method: "POST",
         headers: {
@@ -96,7 +97,7 @@ const CheckItem = (props: Props) => {
         `
       };
 
-      const res = await fetch('http://localhost:6921/graphql', {
+      const res = await fetch(API_URL, {
         body: JSON.stringify(requestBody),
         method: "POST",
         headers: {

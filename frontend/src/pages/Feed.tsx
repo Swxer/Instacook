@@ -4,6 +4,7 @@ import { Recipe } from '../types/instacook-types';
 import { Typography, Container, Grid, Link } from '@mui/material';
 import ProfileRecipe from '../components/profile/ProfileRecipe';
 import { currentAuthenticatedUser } from '../util/currentAuthenticatedUser';
+import { API_URL } from '../config';
 
 type Props = {}
 
@@ -33,7 +34,7 @@ const Feed = (props: Props) => {
             }
           `
         };
-        const res = await fetch('http://localhost:6921/graphql', {
+        const res = await fetch(API_URL, {
           body: JSON.stringify(requestBody),
           method: "POST",
           headers: {

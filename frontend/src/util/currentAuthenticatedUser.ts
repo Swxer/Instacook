@@ -1,4 +1,5 @@
 import { UserInfo } from "../types/instacook-types";
+import { API_URL } from "../config";
 
 export const currentAuthenticatedUser = async (): Promise<UserInfo> => {
   const body = {
@@ -17,7 +18,7 @@ export const currentAuthenticatedUser = async (): Promise<UserInfo> => {
   const token = localStorage.getItem('token');
 
 
-  const res = await fetch('http://localhost:6921/graphql', {
+  const res = await fetch(API_URL, {
     body: JSON.stringify(body),
     method: "POST",
     headers: {

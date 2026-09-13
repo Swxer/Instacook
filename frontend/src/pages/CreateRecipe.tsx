@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import Image from 'mui-image';
 import { currentAuthenticatedUser } from '../util/currentAuthenticatedUser';
 import { Tag, TagObj } from '../types/instacook-types';
+import { API_URL } from '../config';
 type Props = {}
 
 const bgStyles = {
@@ -66,7 +67,7 @@ const CreateRecipe = (props: Props) => {
       `
     }
 
-    const res = await fetch('http://localhost:6921/graphql', {
+    const res = await fetch('API_URL', {
       body: JSON.stringify(body),
       method: "POST",
       headers: {
@@ -113,7 +114,7 @@ const CreateRecipe = (props: Props) => {
       `
     }
     try {
-      const res = await fetch('http://localhost:6921/graphql', {
+      const res = await fetch('API_URL', {
         body: JSON.stringify(requestBody),
         method: "POST",
         headers: {
@@ -162,7 +163,7 @@ const CreateRecipe = (props: Props) => {
       `
     }
     try {
-      const res = await fetch('http://localhost:6921/graphql', {
+      const res = await fetch('API_URL', {
         body: JSON.stringify(requestBody),
         method: "POST",
         headers: {

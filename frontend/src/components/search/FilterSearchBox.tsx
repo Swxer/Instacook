@@ -2,6 +2,7 @@ import { Autocomplete, TextField } from '@mui/material'
 import React from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { RecipeThumbnail, TagObj } from '../../types/instacook-types';
+import { API_URL } from '../../config';
 
 type Props = {
   // dropdown tag options
@@ -89,7 +90,7 @@ const FilterSearchBox = (props: Props) => {
         `
       }
 
-      const res = await fetch('http://localhost:6921/graphql', {
+      const res = await fetch(API_URL, {
         body: JSON.stringify(body),
         method: "POST",
         headers: {
