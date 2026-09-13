@@ -1,5 +1,7 @@
 # Instacook, a meal recommendation app
 
+**[Try it live →](https://instacook-app.netlify.app/)**
+
 # Developers
 ## Frontend Developers
 - Matthew Lau
